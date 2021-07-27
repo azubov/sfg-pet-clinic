@@ -39,6 +39,7 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Long> 
     private Long getNextId() {
         Long nextId = null;
         try {
+            // maximal existing id (key) in the map + 1
             nextId = Collections.max(map.keySet()) + 1;
         } catch (NoSuchElementException e) {
             nextId = 1L;

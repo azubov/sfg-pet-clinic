@@ -39,4 +39,36 @@ public class Owner extends Person {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private Set<Pet> pets = new HashSet<>();
 
+    //Builder pattern
+
+//    public static Builder builder() {
+//        return new Builder();
+//    }
+//
+//    public static class Builder {
+//        private Owner owner;
+//
+//        public Builder() {
+//            owner = new Owner();
+//        }
+//
+//        public Builder id(Long id) {
+//            owner.setId(id);
+//            return this;
+//        }
+//
+//        public Owner build() {
+//            return owner;
+//        }
+//    }
+
+    @Override
+    public String toString() {
+        return "Owner{" +
+                "id='" + super.getId() + '\'' +
+                ", city='" + city + '\'' +
+                ", telephone='" + telephone + '\'' +
+                ", pets=" + pets +
+                '}';
+    }
 }
